@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Phoenix_Assembly_URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0282072404917788 -0.10547160556276 0.0326672159448303"
+        rpy="0 0 0" />
+      <mass
+        value="21.6534271101248" />
+      <inertia
+        ixx="0.32693630942717"
+        ixy="5.7909805151449E-06"
+        ixz="3.97821538982226E-06"
+        iyy="0.475061081262971"
+        iyz="9.93303005218849E-05"
+        izz="0.202144960475972" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Phoenix_Assembly_URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Phoenix_Assembly_URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
