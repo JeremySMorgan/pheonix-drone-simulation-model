@@ -43,21 +43,21 @@ Also, install pymavlink and MAVProxy:
 ## Running
 
 
-***launch gazebo:***
-In first terminal:
-`gazebo --verbose motherdrone_ardupilot.world`
+***launch gazebo:*** <br />
+In first terminal: <br />
+`gazebo --verbose motherdrone_ardupilot.world` <br />
 
 
-***run  ardupilot sitl:***
-In second terminal:
-`sv -f Gazebo -v ArduCopter --map --console`
+***run  ardupilot sitl:*** <br />
+In second terminal: <br />
+`sv -f Gazebo -v ArduCopter --map --console` <br />
 
-If everything works, the MAV terminal should open. in the terminal, run:
-`mode guided`    # enable manual control.
-`param load <relative path to>/pheonix-drone-simulation-model/configs/motherdrone.parm`    # load PID values
-*wait 45s-1m for drone to calibrate*
-`arm throttle`  # arm the drone
-`takeoff 1`           # takeoff and hover at 1m. Must be run within 10 seconds of arming or drone will disarm
+If everything works, the MAV terminal should open. in the terminal, run: <br />
+`mode guided`    # enable manual control. <br />
+`param load <relative path to>/pheonix-drone-simulation-model/configs/motherdrone.parm`    # load PID values <br />
+*wait 45s-1m for drone to calibrate* <br />
+`arm throttle`  # arm the drone <br />
+`takeoff 1`           # takeoff and hover at 1m. Must be run within 10 seconds of arming or drone will disarm <br />
 
 At this point the drone should takeoff! 
 
