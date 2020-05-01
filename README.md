@@ -1,9 +1,16 @@
 # Pheonix Drone Simulation 
 
 ## Requirements
-Ubuntu 16.04 or 18. (not tested with 18.)
+1) Ubuntu 16.04 or 18. (not tested with 18.)
 
-Gazebo 8, install from [[http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=8.0](http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=8.0)]. The ardupilot gazebo plugin failed to build for Gazebo7 and Gazebo9.
+2) Gazebo 8, install from [[http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=8.0](http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=8.0)]. The ardupilot gazebo plugin failed to build for Gazebo7 and Gazebo9. Installation instructions:
+
+```
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt update
+sudo apt install gazebo8 libgazebo8-dev
+```
 
 
 ## Setup
@@ -21,12 +28,15 @@ export GAZEBO_RESOURCE_PATH=<path to>/pheonix-drone-simulation-model/worlds:${GA
 
 
 2)
-Download ArduPilot ([https://github.com/ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot)). Save an alias to the sim_vehicles.py script by adding the following line to .bashrc:
+Download ArduPilot ([https://github.com/ArduPilot/ardupilot](https://github.com/ArduPilot/ardupilot)). Overview: [https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html](https://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html). Save an alias to the sim_vehicles.py script by adding the following line to .bashrc:
 
 ```
-alias sv="python3.5 <path to>/ardupilot/Tools/autotest/sim_vehicle.py"
+alias sv="python3.6 <path to>/ardupilot/Tools/autotest/sim_vehicle.py"
 ```
 
+Also, install pymavlink and MAVProxy:
+
+```python3.6 -m pip install --upgrade pymavlink MAVProxy --user```
 
 
 
@@ -52,3 +62,8 @@ If everything works, the MAV terminal should open. in the terminal, run:
 At this point the drone should takeoff! 
 
 see https://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html for a list of commands. 
+
+
+## Demo
+
+See https://www.youtube.com/watch?v=qSprZL5BsmU&t=1s for a demo of the simulation running
